@@ -23,16 +23,29 @@ class WelcomeController extends Controller {
 		$Fileupload = DB::table('Fileuploads')->where('categoria' ,'=', 'Banner')->get();
 
 		$modulo1 = DB::table('Fileuploads')->where('categoria' ,'=', 'modulo1')->get();
+
+		$modulo2 = DB::table('Fileuploads')->where('categoria' ,'=', 'modulo2')->get();
+
+		$modulo3 = DB::table('Fileuploads')->where('categoria' ,'=', 'modulo3')->get();
+
+		$modulo4 = DB::table('Fileuploads')->where('categoria' ,'=', 'modulo4')->get();
 		
-		return view('welcome',['Fileupload' => $Fileupload ],['modulo1' => $modulo1]);
+		return view('welcome',
+			['Fileupload' => $Fileupload ,
+			'modulo1' => $modulo1,
+			'modulo2' => $modulo2,
+			'modulo3' => $modulo3,
+			'modulo4' => $modulo4]);
 	}
 	
 	public function cadastro(){
 		$Fileupload = Fileupload::all();
 		
 	return view('contato/cadastro',['Fileupload' => $Fileupload]);
+
 }	
 	public function email(Request $Request){
+
 		
 	$email = $Request->all();
 	email::create($email);
@@ -42,7 +55,12 @@ class WelcomeController extends Controller {
 	return view('contato.cadastro');
 
 	
-}	
+}
+public function quem(){
+
+	
+	return view('modulo/quemsomos');
+}
 
 }
 

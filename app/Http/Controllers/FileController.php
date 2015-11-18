@@ -13,6 +13,7 @@ class FileController extends Controller {
 	}
 
 	public function getbanner(){
+
 		
 		return view('modulo/Formbanner');
 	}
@@ -21,21 +22,35 @@ class FileController extends Controller {
 
 	public function postbanner(Request $Request){
 
-	 $filename = $Request->filename;
-	 
-	 $newfile = new Fileupload;
-	 $newfile->imagem= $Request->file('imagem')->move('img',$filename);
-	 $newfile->filename=$Request->filename;
-	 $newfile->ativo=$Request->ativo;
-	 $newfile->categoria=$Request->categoria;
-	 $newfile->descricao=$Request->descricao;
-	 $newfile->save();
-	 
+								 $filename = $Request->filename;
+								 
+								 $newfile = new Fileupload;
+								 $newfile->imagem= $Request->file('imagem')->move('img',$filename);
+								 $newfile->filename=$Request->filename;
+								 $newfile->ativo=$Request->ativo;
+								 $newfile->categoria=$Request->categoria;
+								 $newfile->descricao=$Request->descricao;
+								 $newfile->save();
+								 
 	}
 
-	public function update(Request $Request,$id){
+	public function getupdate($id){
 
-		return 'este id=='.$id;
+							$Fileupload = Fileupload::find($id);
+
+							return view('modulo/FormBannerUpdate',compact('Fileupload'));
+
+	}
+	public function putupdate(Request $request,$id){
+
+								 $filename = $request->filename;
+								 $imagem= $request->file('imagem')->move('img',$filename);
+
+
+								$update = Fileupload::find($id)->update($request->all());
+								//return 'este é um novo update'.$Request->filename;
+
+
 
 	}
 
