@@ -28,6 +28,8 @@ class HomeController extends Controller {
 								$modulo3 = DB::table('Fileuploads')->where('categoria' ,'=', 'modulo3')->get();
 
 								$modulo4 = DB::table('Fileuploads')->where('categoria' ,'=', 'modulo4')->get();
+
+								$modulo5 = DB::table('Fileuploads')->where('categoria' ,'=', 'modulo5')->get();
 								//$Fileupload = Fileupload::all();
 
 								return view('home',
@@ -35,7 +37,8 @@ class HomeController extends Controller {
 									'modulo1' => $modulo1,
 									'modulo2' => $modulo2,
 									'modulo3' => $modulo3,
-									'modulo4' => $modulo4
+									'modulo4' => $modulo4,
+									'modulo5' => $modulo5
 														]);
 	}
 

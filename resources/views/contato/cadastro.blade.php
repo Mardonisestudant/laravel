@@ -1,7 +1,7 @@
 @extends('layouts.navbarWelcome')
 @section('content')
 <div class="row-fluid">
-<div class="col-md-7">
+<div class="col-md-12">
 {!! Form::open(['route' => 'email']) !!}
 <div class="form-group">
 {!! Form::label('name','Nome:') !!}
@@ -20,9 +20,6 @@
 {!! Form::submit('Enviar',['class'=>'btn btn-primary']) !!}
 </div>
 {!! Form::close() !!}
-
-</div>
-<div class="col-md-5">
 
 </div>
 </div>

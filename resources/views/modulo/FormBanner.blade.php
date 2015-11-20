@@ -21,11 +21,11 @@
 array(
 'Escolha' => 'Escolha.....',
 'Banner' => 'Banner', 
-'Post' => 'Post',
 'modulo1' => 'Modulo1',
 'modulo2' => 'Modulo2',
 'modulo3' => 'Modulo3',
-'modulo4' => 'Modulo4')) !!}
+'modulo4' => 'Modulo4',
+'modulo5' => 'Modulo5')) !!}
 </div>
 
 <div class="form-group">

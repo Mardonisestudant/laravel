@@ -39,7 +39,8 @@ class WelcomeController extends Controller {
 	}
 	
 	public function cadastro(){
-		$Fileupload = Fileupload::all();
+
+		$Fileupload = DB::table('Fileuploads')->where('categoria' ,'=', 'Banner')->get();
 		
 	return view('contato/cadastro',['Fileupload' => $Fileupload]);
 
@@ -57,9 +58,12 @@ class WelcomeController extends Controller {
 	
 }
 public function quem(){
+	$Fileupload = DB::table('Fileuploads')->where('categoria' ,'=', 'Banner')->get();
 
-	
-	return view('modulo/quemsomos');
+	$modulo5 = DB::table('Fileuploads')->where('categoria' ,'=', 'modulo5')->get();
+	return view('modulo/quemsomos',[
+									'modulo5' => $modulo5,
+									'Fileupload' => $Fileupload]);
 }
 
 }

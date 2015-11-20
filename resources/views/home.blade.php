@@ -87,6 +87,17 @@
 </tr>
 @endforeach
 @endif
+@if(isset($modulo5))
+ @foreach($modulo5 as $modulo)
+ <tr>
+ <td>{{ $modulo->id }}</td>
+ <td>{{ $modulo->filename }}</td>
+ <td>{{ $modulo->categoria }}</td>
+ <td>{{	$modulo->descricao }}</td>
+ <td><a href="{{ route('bannerput',['id'=>$modulo->id ]) }}"  class="btn-sm btn-success">Editar</a></td>
+</tr>
+@endforeach
+@endif
 </tbody>
 </table>
 </div>
